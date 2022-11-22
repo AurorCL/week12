@@ -10,7 +10,7 @@ const clickMeButton = document.querySelector(".clickMe");
 
 // SAME --- only shows once
 function getAlert(event) {
-    console.log(event.target)
+    // console.log(event.target)
     alert("POWERED UP!");
     // clickMeButton.removeEventListener ("click", getAlert) 
 }
@@ -44,11 +44,11 @@ function BGColor() {
 
 clickMeButton.addEventListener ("click", BGColor); 
 
-function btnText() {
-    if (clickMeButton.textContent === "Power Up?") {
-        clickMeButton.textContent = "Powered Up!" }
-    else {clickMeButton.textContent = "Power Up?"}
-}
+// function btnText() {
+//     if (clickMeButton.textContent === "Power Up?") {
+//         clickMeButton.textContent = "Powered Up!" }
+//     else {clickMeButton.textContent = "Power Up?"}
+// }
 
 // SAME with above >>> NOT WORKING!!!!
 // function btnText() {
@@ -58,18 +58,17 @@ function btnText() {
 //         clickMeButton.textContent = "Power Up?" }
 //     }
 
-clickMeButton.addEventListener ("click", btnText); 
+// clickMeButton.addEventListener ("click", btnText); 
 
 
 function createAddButton()
 {
     const purpleButton = document.createElement("button");
     purpleButton.textContent = "Purple";
-    purpleButton.addEventListener("mousemove", changeBGGreen);
+    purpleButton.addEventListener("mouseover", changeBGGreen);
     // purpleButton.classList.add("green-background");
     document.body.appendChild(purpleButton);
 }   
-
 
 clickMeButton.addEventListener ("click", createAddButton); 
 
@@ -77,7 +76,7 @@ function createAddParagraph()
 {
     const newPara = document.createElement("p");
     newPara.textContent = "My Paragraph";
-    newPara.addEventListener("mousemove", changeBGGreen);
+    newPara.addEventListener("mouseover", changeBGGreen);
     // newPara.classList.add("green-background");
     document.body.appendChild(newPara);
 }   
@@ -86,5 +85,9 @@ clickMeButton.addEventListener ("click", createAddParagraph);
 
 function changeBGGreen(event)
 {
-    event.target.classlist.add("green-background");
+    // console.log(event.target);
+    event.target.classlist.add("green");
 }
+
+const buttonContainer = document.querySelector(".buttonContainer");
+buttonContainer.addEventListener("mouseover", changeBGGreen);
