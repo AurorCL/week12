@@ -60,6 +60,11 @@ clickMeButton.addEventListener ("click", BGColor);
 
 // clickMeButton.addEventListener ("click", btnText); 
 
+function changeBGGreen(event)
+{
+    console.log(event.target);
+    event.target.classList.add("green");
+}
 
 function createAddButton()
 {
@@ -83,11 +88,6 @@ function createAddParagraph()
 
 clickMeButton.addEventListener ("click", createAddParagraph); 
 
-function changeBGGreen(event)
-{
-    // console.log(event.target);
-    event.target.classlist.add("green");
-}
 
 const buttonContainer = document.querySelector(".buttonContainer");
 buttonContainer.addEventListener("mouseover", changeBGGreen);
