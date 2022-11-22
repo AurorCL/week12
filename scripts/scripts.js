@@ -9,7 +9,8 @@ const clickMeButton = document.querySelector(".clickMe");
 // clickMeButton.addEventListener ("click", getAlert); 
 
 // SAME --- only shows once
-function getAlert() {
+function getAlert(event) {
+    console.log(event.target)
     alert("POWERED UP!");
     // clickMeButton.removeEventListener ("click", getAlert) 
 }
@@ -44,9 +45,14 @@ function BGColor() {
 clickMeButton.addEventListener ("click", BGColor); 
 
 function btnText() {
-    if (clickMeButton.textContent == "Power Up?") {
+    if (clickMeButton.textContent === "Power Up?") {
         clickMeButton.textContent = "Powered Up!" }
     else {clickMeButton.textContent = "Power Up?"}
 }
+
+clickMeButton.addEventListener ("click", btnText); 
+
+
+
 
 clickMeButton.addEventListener ("click", btnText); 
