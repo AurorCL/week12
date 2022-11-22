@@ -91,3 +91,8 @@ clickMeButton.addEventListener ("click", createAddParagraph);
 
 const buttonContainer = document.querySelector(".buttonContainer");
 buttonContainer.addEventListener("mouseover", changeBGGreen);
+
+function btnTextColor(event) {
+    event.target.style.backgroundColor = event.target.textContent
+}
+buttonContainer.addEventListener("mouseover", btnTextColor);
