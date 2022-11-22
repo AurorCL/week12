@@ -50,9 +50,41 @@ function btnText() {
     else {clickMeButton.textContent = "Power Up?"}
 }
 
+// SAME with above >>> NOT WORKING!!!!
+// function btnText() {
+//     if (clickMeButton.textContent === "Power Up?") {
+//         clickMeButton.textContent = "Powered Up!" }
+//     else if (clickMeButton.textContent === "Powered Up!") {
+//         clickMeButton.textContent = "Power Up?" }
+//     }
+
 clickMeButton.addEventListener ("click", btnText); 
 
 
+function createAddButton()
+{
+    const purpleButton = document.createElement("button");
+    purpleButton.textContent = "Purple";
+    purpleButton.addEventListener("mousemove", changeBGGreen);
+    // purpleButton.classList.add("green-background");
+    document.body.appendChild(purpleButton);
+}   
 
 
-clickMeButton.addEventListener ("click", btnText); 
+clickMeButton.addEventListener ("click", createAddButton); 
+
+function createAddParagraph()
+{
+    const newPara = document.createElement("p");
+    newPara.textContent = "My Paragraph";
+    newPara.addEventListener("mousemove", changeBGGreen);
+    // newPara.classList.add("green-background");
+    document.body.appendChild(newPara);
+}   
+
+clickMeButton.addEventListener ("click", createAddParagraph); 
+
+function changeBGGreen(event)
+{
+    event.target.classlist.add("green-background");
+}
